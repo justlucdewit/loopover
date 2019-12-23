@@ -6,4 +6,4 @@ app.get('/', (request, response) => {
 	//response.sendFile('index.html');
 });
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000)

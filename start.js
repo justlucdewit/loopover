@@ -1,9 +1,19 @@
 const express = require('express');
+const { resolve } = require("path") 
+
+
+const PORT = process.env.PORT || 5000;
 const app = new express();
 
-app.get('/', (request, response) => {
-	response.send("hello heroku");
-	//response.sendFile('index.html');
+
+app.use(express.static(resolve(__dirname, "app")));
+
+app.get('/play.html',(request, response)=>{response.sendFile('app/home.html',{root: __dirname});});
+app.get('/home.html',(request, response)=>{response.sendFile('app/home.html',{root: __dirname});});
+app.get('/',(request,response)=>{response.sendFile('app/home.html',{root: __dirname});});
+
+app.on('listening', () => {
+	console.log(`SERVER RUNNING ON ${PORT}`)
 });
 
-app.listen(process.env.PORT || 5000)
+app.listen(PORT);

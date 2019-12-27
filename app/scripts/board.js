@@ -1,10 +1,10 @@
+//rows = height
+//cols = width
+
 function Board(x, y){
     this.cells = [];
     this.width = x;
     this.height = y;
-
-    this.width = 0;
-    this.height = 0;
 
     //inialize the 2d array
     for (let i = 0; i < x; i++){
@@ -20,11 +20,19 @@ function Board(x, y){
         else this.moveY((index+this.height)%this.height, count);
     }
 
-    this.moveX = (row, count) => {
-        
+    this.show = () => {
+        console.log(this.cells);
     }
 
-    this.moveY = (col, count) => {
+    this.moveX = (rowNum, count) => {
+        const row = this.cells[rowNum];
+        this.cells[rowNum] = row.map((cell, i) => row[(i+this.width*16-count)%this.width]);
+    }
 
+    this.moveY = (colNum, count) => {
+        const col = [...Array(this.height)].map((_, i) => this.cells[i][colNum]);
+        for (let i = 0; i < this.height; i++){
+            
+        }
     }
 }

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-body, html{
+*{
     padding: 0px;
     margin: 0px;
 }
@@ -12,8 +12,16 @@ body{
     font-family: Roboto;
 }
 
+#headerTitle, #nav ul{
+    padding: 20px;
+}
+
+p{
+    padding: 10px;
+}
+
 a{
-    color: blue;
+    color: cornflowerblue;
 }
 
 nav ul{
@@ -50,6 +58,6 @@ li a{
 #textfield{
     text-align: center;
     color: white;
-    padding: 0% 10%;
+    padding: 0% 25%;
     padding-top: 10px;
 }

@@ -35,10 +35,6 @@ li a{
     text-decoration: none;
 }
 
-li a:active{
-    background-color: red;
-}
-
 #headerTitle{
     text-align: center;
     text-shadow: #555 3px 3px;

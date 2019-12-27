@@ -17,22 +17,22 @@ app.get('/home.html',(request, response)=>{
 
 app.get('/play.html',(request, response)=>{
 	console.log("someone opened play.html");
-	response.sendFile('app/home.html',{root: __dirname});	
+	response.sendFile('app/play.html',{root: __dirname});	
 });
 
 app.get('/leaderboard.html',(request, response)=>{
 	console.log("someone opened leaderboard.html");
-	response.sendFile('app/home.html',{root: __dirname});
+	response.sendFile('app/lb.html',{root: __dirname});
 });
 
 app.get('/news.html',(request, response)=>{
 	console.log("someone loaded news.html");
-	response.sendFile('app/home.html',{root: __dirname});
+	response.sendFile('app/news.html',{root: __dirname});
 });
 
 app.get('/explore.html',(request, response)=>{
 	console.log("someone loaded explore.html");
-	response.sendFile('app/home.html',{root: __dirname});
+	response.sendFile('app/explore.html',{root: __dirname});
 });
 
 //default page

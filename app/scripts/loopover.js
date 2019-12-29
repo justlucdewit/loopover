@@ -16,6 +16,10 @@ ctx.textAlign = "center";
 canvas.width = width;
 canvas.height = height;
 
+//memory vars
+let prevX = 0;
+let prevY = 0;
+
 function renderBoard(){
     ctx.clearRect(0, 0, width, height);
     for (let x = 0; x < board.width; x++){
@@ -31,4 +35,24 @@ function renderBoard(){
     }
 }
 
-renderBoard();
+function checkMoved(x, y){
+    console.log(`x:${x} y:${y}`);
+}
+
+function gameloop(evt){
+    renderBoard(evt);
+    let xpos = evt.clientX-canvas.getClientRects()[0].x;
+    let ypos = evt.clientY-canvas.getClientRects()[0].y;
+
+    if ((xpos/tilesize|0) != (prevX/tilesize|0)){
+        console.log("horizontal move");
+    }
+
+    if ((ypos/tilesize|0) != (prevY/tilesize|0)){
+        console.log("vertical move");
+    }
+    prevY = ypos;
+    prevX = xpos;
+}
+
+gameloop();
